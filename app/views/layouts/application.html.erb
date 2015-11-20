@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!--add sign out button if user is signed in - Mohamed Moubarak - -->
+<% if current_user.present?%>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% end %>
+<!--end sign out button - Mohamed Moubarak - -->
 
 <%= yield %>
 
